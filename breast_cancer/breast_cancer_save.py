@@ -27,4 +27,7 @@ classifier.fit(predictors, clas, batch_size=10, epochs=100)
 classifier_json = classifier.to_json()
 with open('classifier_breast.json', 'w') as json_file:
     # Salvando em disco
-    json_file.write(classifier_json) 
+    json_file.write(classifier_json)
+    
+# Salvando os pesos
+classifier.save_weights('classifier_breast.h5')
